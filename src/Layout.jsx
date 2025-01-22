@@ -1,18 +1,16 @@
-import { Outlet } from "react-router-dom";
-import Header from "./components/Header";
-import TopMenu from "./components/TopMenu";
-import Footer from "./components/Footer";
-
+import { Link, Outlet } from "react-router-dom";
 const Layout=()=>{
     return(
         <>
-          <Header/>
-          <TopMenu/>
-    
-            <Outlet/>
-
-          <Footer/>
-        
+          <Link to="home">Home</Link> |
+          <Link to="insert">Insert</Link> |
+          <Link to="display">Display</Link> |
+          <Link to="search">Search</Link> |
+          <Link to="update">Update</Link>
+          <hr />
+          <Outlet />
+          <hr/>
+          www.yahoo.com
         </>
     )
 }
