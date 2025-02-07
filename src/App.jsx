@@ -1,11 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Layout from "./Layout"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
 import Home from "./pages/Home";
-import Insert from "./pages/Insert";
-import Display from "./pages/Display";
-import Search from "./pages/Search";
-import Update from "./pages/Update";
-import EditData from "./pages/EditData";
+import Cart from "./pages/Cart";
+import CheckOut from "./pages/CheckOut";
+import PayComplete from "./pages/PayComplete";
+
 const App=()=>{
   return(
     <>
@@ -13,12 +12,11 @@ const App=()=>{
          <Routes>
            <Route path="/" element={<Layout/>}>
             <Route index element={<Home/>}/>
-            <Route path="home" element={<Home/>}/>
-            <Route path="insert" element={<Insert/>}/>
-            <Route path="display" element={<Display/>}/>
-            <Route path="search" element={<Search/>} />
-            <Route path="update" element={<Update/>}/>
-            <Route path="editdata/:id" element={<EditData/>} />
+            <Route path="home" element={<Home />} />
+            <Route path="cart" element={<Cart/>}/>
+            <Route path="checkout" element={<CheckOut/>}/>
+            <Route path="paycomplete" element={<PayComplete/>}/>
+           
            </Route>
          </Routes>
        </BrowserRouter>
@@ -26,4 +24,3 @@ const App=()=>{
   )
 }
 export default App;
-
