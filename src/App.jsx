@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import CheckOut from "./pages/CheckOut";
 import PayComplete from "./pages/PayComplete";
+import ProductDetail from "./pages/ProductDetail";
+import Search from "./pages/Search";
 
 const App=()=>{
   return(
@@ -16,7 +18,8 @@ const App=()=>{
             <Route path="cart" element={<Cart/>}/>
             <Route path="checkout" element={<CheckOut/>}/>
             <Route path="paycomplete" element={<PayComplete/>}/>
-           
+            <Route path="prodetail/:id" element={<ProductDetail/>}/>
+            <Route path="search" element={<Search/>} />
            </Route>
          </Routes>
        </BrowserRouter>

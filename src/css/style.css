@@ -35,3 +35,10 @@
 {
     display: flex;
 }
+
+#myproduct
+{
+    display: flex;
+    width: 70%;
+    margin: auto;
+}

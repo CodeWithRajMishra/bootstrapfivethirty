@@ -9,10 +9,11 @@ import Card from 'react-bootstrap/Card';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { addtoCart } from '../cartSlice';
-
+import { useNavigate } from 'react-router-dom';
 const Home=()=>{
 const [prodata, setProData]= useState([]);
 const dispatch= useDispatch();
+const navigate= useNavigate();
 const loadData=async()=>{
     let api="http://localhost:3000/product";
     const response= await axios.get(api);
@@ -30,7 +31,8 @@ const ans= prodata.map((key)=>{
     return(
         <>
           <Card style={{ width: '16rem', marginTop:"20px" }}>
-      <Card.Img variant="top" src={key.image} style={{height:"300px"}} />
+      <Card.Img variant="top" src={key.image} style={{height:"300px"}}
+      onClick={()=>{navigate(`/prodetail/${key.id}`)}} />
       <Card.Body>
         <Card.Title>{key.name}</Card.Title>
         <Card.Text>
