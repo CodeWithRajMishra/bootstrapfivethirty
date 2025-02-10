@@ -13,7 +13,9 @@ const TopNav=()=>{
             <Nav.Link as={Link} to="home">Home</Nav.Link>
             <Nav.Link as={Link} to="cart">Cart</Nav.Link>
             <Nav.Link as={Link} to="search">Search</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link as={Link} to="smartphone">Smart Phone</Nav.Link>
+            <Nav.Link as={Link} to="keypad">Keypad Phone</Nav.Link>
+            <Nav.Link as={Link} to="android">Android Phone</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

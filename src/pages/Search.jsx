@@ -18,8 +18,6 @@ const loadData=async(e)=>{
     setProData(response.data);
 }
 
-
-
 const ans= prodata.map((key)=>{
        const mystr= key.name.toLowerCase();
        const myproduct= mypro.toLowerCase();
@@ -53,7 +51,6 @@ const ans= prodata.map((key)=>{
         <>
           <h1> Search Product</h1>   
           Enter Product name : <input type="text" value={mypro} onChange={loadData} />
-          
           <hr />
 
 <div id="cardData">
