@@ -12,6 +12,7 @@ import { addtoCart } from '../cartSlice';
 import { useNavigate } from 'react-router-dom';
 const Home=()=>{
 const [prodata, setProData]= useState([]);
+const [reviewdata, setReviewData]= useState([]);
 const dispatch= useDispatch();
 const navigate= useNavigate();
 const loadData=async()=>{
@@ -19,13 +20,19 @@ const loadData=async()=>{
     const response= await axios.get(api);
     console.log(response.data);
     setProData(response.data);
+    let api1="http://localhost:3000/userreviews";
+    const response1= await axios.get(api1);
+    console.log(response1.data);
+    setReviewData(response1.data);
 }
 
 useEffect(()=>{
     loadData();
 }, [])
 
-
+var reviewPoint=0;
+var sno=0;
+var myPoint=0
 const ans= prodata.map((key)=>{
 
     return(
@@ -38,6 +45,24 @@ const ans= prodata.map((key)=>{
         <Card.Text>
            {key.description}
            <h4> Price : {key.price}</h4>
+           Ratings : 
+          {  
+             reviewdata.map((key1)=>{
+              if (key.id==key1.productid)
+              {
+                reviewPoint=reviewPoint+key1.point
+                sno++;
+              }
+             })       
+
+          }
+          Point : {parseInt(reviewPoint/sno)}
+
+
+      
+                         
+     
+
         </Card.Text>
         <Button variant="primary" 
         onClick={()=>{dispatch(addtoCart({id:key.id, name:key.name, desc:key.description,category:key.category, price:key.price, image:key.image, qnty:1}))}}>
