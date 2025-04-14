@@ -1,24 +1,16 @@
-import Header from "./component/Header";
-import Container from 'react-bootstrap/Container';
-import TopNav from "./component/TopNav";
-import Footer from "./component/Footer";
+import TopNav from "./components/TopNav";
+import TopBanner from "./components/TopBanner";
 import { Outlet } from "react-router-dom";
+import Footer from "./components/Footer";
+
 const Layout=()=>{
     return(
         <>
-         <Container fluid>
-         <div id="myTop">
-         <Header/> 
-         <TopNav/>
-         </div>
-       
+           <TopNav/>
+           <TopBanner/>
+           <Outlet/>
+           <Footer/>
 
-          <Outlet/>
-           
-
-         <Footer/>
-         </Container>
-            
         </>
     )
 }

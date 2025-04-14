@@ -1,33 +1,29 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Cart from "./pages/Cart";
-import CheckOut from "./pages/CheckOut";
-import PayComplete from "./pages/PayComplete";
-import ProductDetail from "./pages/ProductDetail";
+import Insert from "./pages/Insert";
+import Display from "./pages/Display";
 import Search from "./pages/Search";
-import SmartPhone from "./pages/SmartPhone";
-import KeypadPhone from "./pages/KeypadPhone";
-import AndroidPhone from "./pages/AndroidPhone";
+import Update from "./pages/Update";
+import Contact from "./pages/Contact";
+import MyEdit from "./pages/MyEdit";
 
 const App=()=>{
   return(
     <>
        <BrowserRouter>
-         <Routes>
-           <Route path="/" element={<Layout/>}>
-            <Route index element={<Home/>}/>
-            <Route path="home" element={<Home />} />
-            <Route path="cart" element={<Cart/>}/>
-            <Route path="checkout" element={<CheckOut/>}/>
-            <Route path="paycomplete" element={<PayComplete/>}/>
-            <Route path="prodetail/:id" element={<ProductDetail/>}/>
-            <Route path="search" element={<Search/>} />
-            <Route path="smartphone" element={<SmartPhone/>}/>
-            <Route path="keypad" element={<KeypadPhone/>} />
-            <Route path="android" element={<AndroidPhone/>}/>
-           </Route>
-         </Routes>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+          <Route index element={<Home/>}/>
+          <Route path="home" element={<Home/>} />
+          <Route path="insert" element={<Insert/>}/>
+          <Route path="display" element={<Display/>}/>
+          <Route path="search" element={<Search/>}/>
+          <Route path="update" element={<Update/>}/>
+          <Route path="contact" element={<Contact/>} />
+          <Route path="myedit/:id" element={<MyEdit/>} />
+          </Route>
+        </Routes>
        </BrowserRouter>
     </>
   )
